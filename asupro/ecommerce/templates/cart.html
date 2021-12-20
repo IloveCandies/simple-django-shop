@@ -1,0 +1,116 @@
+{% extends "index-centred.html" %}
+{% load static %}
+
+{% block meta %}
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Каталог</title>    
+  {% endblock meta %}
+  {% block maincontent %}
+    <article id="production" class="content white">
+    <div><h5 class="centerd-text"> Корзина</h5></div>
+    <br>
+    <div class="content">
+      <div class="content">
+        <table class="striped">
+          <tbody >       
+            {% for item in cart %}
+            {% with product=item.product %}
+            <tr class="row">
+              <td class="col s3">
+                <div class="card small"> 
+                  <div class="card-image waves-effect waves-block waves-light">
+                      <img class="activator" src="{{Media}}{{item.product.picture.url}}">
+                  </div>
+              </div>
+              </td>
+              <td class="col s2" style="padding-top: 10%;">{{ product.title }}</td>
+              <td class="col s2" style="padding-top: 10%;" >Колличество: {{ item.quantity }}</td>
+              <td class="col s1" style="padding-top: 10%;" >{{ item.price }}</td>
+              <td class="col s2" style="padding-top: 9%;"><a class="col s12 btn blue" href="{%url 'increase' product_slug=item.product.slug %}" role="button">Добавить</a></td>
+              <td class="col s2" style="padding-top: 9%;"><a class="col s12 btn red" href="{%url 'decrease' product_slug=item.product.slug %}" role="button">Удалить</a></td>
+            </tr>
+            {% endwith %}
+            {% endfor %}
+          </tbody>
+        </table>
+        <h5 style=" margin-left: 0.5rem;"> Итого: {{ cart.get_total_price}}рублей</h5>
+        <a class="blue btn modal-trigger  col s12" href="#modal1" style="width: 98%; margin-left: 0.5rem;">Оформить заказ</a> 
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal grey  lighten-5 ">
+          <div class="modal-content">
+            <h5 class="centerd-text blue-text">Оформление заказа</h5> <br>
+            <div class="">
+              <form class="col s12">
+                <div class="">
+                  <div class="input-field col s6">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="prefix" required="true" type="text" class="validate" placeholder="Как к вам обращаться">
+                    <span class="helper-text" data-error="неверно" data-success="верно"></span>
+                  </div>
+                  <div class="input-field col s6">
+                    <i class="material-icons prefix">phone</i>
+                    <input id="phone" required="true" type="tel" placeholder="Ваш телефонный номер" class="validate" pattern="+[0=9] ([0-9]{3}) [0-9]{3} [0-9]{4}" maxlength="12">
+                    <span class="helper-text" data-error="неверно" data-success="верно"></span>
+                  </div>
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix">mail</i>
+                    <input id="email" type="email" required="true" class="validate" placeholder="Ваша почта your-cool-mail@mail.com">
+                    <span class="helper-text" data-error="неверно" data-success="верно"></span>
+                  </div>
+                  <div class="input-field col s6">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="prefix" required="true" type="text" class="validate" placeholder="Адрес доставки">
+                    <span class="helper-text" data-error="неверно" data-success="верно"></span>
+                  </div>
+                  <div>
+                    <input type="hidden" name="">
+                  </div>
+                  <div class>
+                    <button type="submit" class="btn-large blue" style="width: 100%;">Оплатить</button>
+                  </div> <br>
+                  <div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </article>
+    
+    <br>   
+    
+    <div id="search" class="modal search" style="height: 30%;width: 100%; top: 10%; overflow: hidden; margin-bottom: 90%;">
+    <div class="modal-content">
+      <div class="row">
+      <form action="">
+          <div class="col s12">
+            <div class="row">
+              <div class="input-field col s12">
+                <textarea id="textarea1" class="materialize-textarea" placeholder="Ваше сообщение"></textarea> 
+                <button class="col btn blue s12"> Найти</button>
+              </div>
+           </div>
+        </div>
+      </form>
+      </div>
+    </div>
+    </div>
+{% endblock maincontent %}
+
+
+</main>
+
+
