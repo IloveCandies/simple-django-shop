@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Главная страница</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="materialize/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body> 
+    <nav class="teal darken-1" role="navigation">
+      <div class="nav-wrapper content w">
+        <a id="logo-container" href="#" class="brand-logo white-text">Logo</a>
+        <ul class=" center-nav hide-on-med-and-down row">
+          <li class="col m2 l2 "></li>
+          <li class="col"><a class="dropdown-trigger white-text" href="#!" data-target="company" href="#">О компании<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li class="col"><a class="dropdown-trigger white-text" href="#!" data-target="devices" href="#">Оборудование<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li class="col"> <a class="dropdown-trigger white-text" href="#!" data-target="services">Услуги<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li class="col"><a class="white-text" href="#!">Контакты</a></li>
+          <li class="col"><input type="text" class="white-text"> </li>
+          <li class="col" ><a class="white-text"  href="#" class=""> <i class=" large material-icons right">shopping_basket</i> Корзина</a></li>
+          <li>
+          </li>
+        </ul>
+          <!-- Dropdown Structure -->
+          <ul id='devices' class='dropdown-content'>
+            <li><a href="#!">Категория</a></li>
+            <li><a href="#!">Категория</a></li>
+          </ul>
+          <ul id='company' class='dropdown-content'>
+            <li><a href="#!">Документы</a></li>
+            <li><a href="#!">Реквизиты</a></li>
+          </ul>
+        <ul id='services' class='dropdown-content'>
+          <li><a href="#!">Категория</a></li>
+          <li><a href="#!">Категория</a></li>
+        </ul>
+        <ul id='contacts' class='dropdown-content'>
+          <li><a href="#!">Реквизиты</a></li>
+          <li><a href="#!">Расписание</a></li>
+        </ul>
+        <ul id="nav-mobile" class="sidenav">
+          <ul class="collapsible">
+            <li>
+              <div class="collapsible-header black-text">О компании</div>
+              <div class="collapsible-body black-text">
+                <a href="http://"> Контактная информация</a>
+                <a href="http://"> Документы</a>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header black-text">Оборудование</div>
+              <div class="collapsible-body black-text">
+                <a href="http://"> Категория</a>
+                <a href="http://"> Категория</a>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header black-text">Услуги</div>
+              <div class="collapsible-body black-text">
+                <a href="http://"> Категория</a>
+                <a href="http://"> Категория</a>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header black-text">Проекты</div>
+              <div class="collapsible-body black-text">
+                <a href="http://"> Категория</a>
+                <a href="http://"> Категория</a>
+              </div>
+            </li>
+            <li>
+              <div class="">
+                <a href="">Контакты</a>
+              </div>
+            </li>
+            <li>
+              <div class="">
+                <a href="#" class="text-light-green text-lighten-5"><i class=" large material-icons right">shopping_basket</i> Корзина</a>
+              </div>
+            </li>
+          </ul>
+        </ul>
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      </div>
+    </nav>
+
+  </header>
+  <aside>
+    <ul class="collapsible">
+      <li>
+        <div class="collapsible-header"><i class="material-icons">search</i>ПОИСК</div>
+        <div class="collapsible-body">
+          <form action="" >
+            <div class="input-field col s12">
+              <input value="Введите текcт и нажмите enter" id="first_name2" type="text" class="validate">
+              <label class="active" for="first_name2">ПОИСК ПО САЙТУ</label>
+            </div>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </aside>
+  <main class="main grey lighten-5"> <br> <br>
+    <div class="row">
+      <article id="production" class=" content grey lighten-5" >
+        <div><h4 class="centerd-text"></h4></div>
+        <section class="">
+          <div class="row">
+            <div class="col m2 l2 s12">
+              <div class="card small">
+                <div class="card-image waves-effect waves-block waves-light">
+                  <img class="activator" src="images/product.PNG">
+                </div>
+                <div class="card-content">
+                  <span class="card-title activator grey-text text-darken-4">Продукт<i class="material-icons right">more_vert</i></span>
+                  <p><a href="#">Cсылка</a></p>
+                </div>
+                <div class="card-reveal">
+                  <span class="card-title grey-text text-darken-4">Продукт<i class="material-icons right">close</i></span>
+                  <p>Здесь написана более подробная информация об продукте</p>
+                </div>
+              </div>            
+            </div>
+            <div class="col m2 l2 s12">
+              <div class="card small">
+                <div class="card-image waves-effect waves-block waves-light">
+                  <img class="activator" src="images/product.PNG">
+                </div>
+                <div class="card-content">
+                  <span class="card-title activator grey-text text-darken-4">Продукт<i class="material-icons right">more_vert</i></span>
+                  <p><a href="#">Cсылка</a></p>
+                </div>
+                <div class="card-reveal">
+                  <span class="card-title grey-text text-darken-4">Продукт<i class="material-icons right">close</i></span>
+                  <p>Здесь написана более подробная информация об продукте</p>
+                </div>
+              </div>            
+            </div>
+            <div class="col m2 l2 s12">
+              <div class="card small">
+                <div class="card-image waves-effect waves-block waves-light">
+                  <img class="activator" src="images/product.PNG">
+                </div>
+                <div class="card-content">
+                  <span class="card-title activator grey-text text-darken-4">Продукт<i class="material-icons right">more_vert</i></span>
+                  <p><a href="#">Cсылка</a></p>
+                </div>
+                <div class="card-reveal">
+                  <span class="card-title grey-text text-darken-4">Продукт<i class="material-icons right">close</i></span>
+                  <p>Здесь написана более подробная информация об продукте</p>
+                </div>
+              </div>            
+            </div>
+            <div class="col m2 l2 s12">
+              <div class="card small">
+                <div class="card-image waves-effect waves-block waves-light">
+                  <img class="activator" src="images/product.PNG">
+                </div>
+                <div class="card-content">
+                  <span class="card-title activator grey-text text-darken-4">Продукт<i class="material-icons right">more_vert</i></span>
+                  <p><a href="#">Cсылка</a></p>
+                </div>
+                <div class="card-reveal">
+                  <span class="card-title grey-text text-darken-4">Продукт<i class="material-icons right">close</i></span>
+                  <p>Здесь написана более подробная информация об продукте</p>
+                </div>
+              </div>            
+            </div>
+            <div class="col m2 l2 s12">
+              <div class="card small">
+                <div class="card-image waves-effect waves-block waves-light">
+                  <img class="activator" src="images/product.PNG">
+                </div>
+                <div class="card-content">
+                  <span class="card-title activator grey-text text-darken-4">Продукт<i class="material-icons right">more_vert</i></span>
+                  <p><a href="#">Cсылка</a></p>
+                </div>
+                <div class="card-reveal">
+                  <span class="card-title grey-text text-darken-4">Продукт<i class="material-icons right">close</i></span>
+                  <p>Здесь написана более подробная информация об продукте</p>
+                </div>
+              </div>            
+            </div>
+  
+            <div class="col m2 l2 s12">
+              <div class="card small">
+                <div class="card-image waves-effect waves-block waves-light">
+                  <img class="activator" src="images/product.PNG">
+                </div>
+                <div class="card-content">
+                  <span class="card-title activator grey-text text-darken-4">Продукт<i class="material-icons right">more_vert</i></span>
+                  <p><a href="#">Cсылка</a></p>
+                </div>
+                <div class="card-reveal">
+                  <span class="card-title grey-text text-darken-4">Продукт<i class="material-icons right">close</i></span>
+                  <p>Здесь написана более подробная информация об продукте</p>
+                </div>
+              </div>            
+            </div>
+  
+          </div>
+        </section>
+        <br>
+        </article>  
+      <article  id="projects"class="col s12 m9 l9">
+        <section class="content">
+          <div><h4 class="centerd-text"></h4></div>
+              <div class="">
+                <div class="card-tabs s12">
+                  <ul class="tabs tabs-fixed-width">
+                    <li class="tab"><a href="#test4">Разработка Систем</a></li>
+                    <li class="tab"><a class="" href="#test5">Проект 2</a></li>
+                    <li class="tab"><a href="#test6">Проект 3</a></li>
+                  </ul>
+                </div>
+                <div class="card-content content ">
+                  <div id="test4">
+                    <div class="row">
+                      <div class="row  m5">
+                        <div class="card-panel teal">
+                          <div class=" s12 m8 l8 white-text"> I am good at containing small bits of information.
+                          I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="white">
+                            <div class="col s12 m4 l4">
+                              <img class="responsive-img" src="images/pr1.jpg" alt="">
+                            </div>
+                            <div class="col s12 m4 l4">
+                              <img class="responsive-img" src="images/pr2.jpg" alt="">
+                            </div>
+                            <div class="col s12 m4 l4">
+                              <img class="responsive-img" src="images/pr1.jpg" alt="">
+                            </div>
+                          </div>
+                          <div class=" content s12 m8 l8"> I am good at containing small bits of information.
+                            I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+                            </div> <br> <br>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="test5">Test 2</div>
+                  <div id="test6">Test 3</div>
+                </div>
+              </div>
+        </section>
+      </article>
+      </article>
+      
+      <div class="col s12 m3 l3"> <br>
+        <div class="row">
+          <div class="col s12">
+            <div class="card-panel ">
+            <div class="row">
+              <div class="col s12 m12">
+                  <div class="card-content">
+                      <div class="row">
+                        <img class="col s12" src="images/1.jpg">
+                        <img class="col s4" src="images/2.jpg">
+                        <img class="col s4" src="images/3.jpg">
+                        <img class="col s4" src="images/4.jpg">
+                        <img class="col s4" src="images/pr2.jpg">
+                        <img class="col s4" src="images/pr1.jpg">
+                        <img class="col s4" src="images/pr2.jpg">
+                      </div>
+                      <a class="waves-effect waves-light" href="https://www.instagram.com/asuproject/" target="_blank"><i class="material-icons left">link</i> Подпишитесь на нас в instagramm</a>
+                </div>
+            </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        </div>
+        </div>
+
+      </div>
+      
+  </div>
+    
+
+    <br>
+  </main>
+
+
+  <footer class="page-footer teal darken-1 ">
+    <div id="subscribe" class="content">
+      <div class="row">
+        <div class="col l8 s12">
+          <div class="container">
+              <form class="col s12">
+                <div class="row">
+                  <h5 class="teal darken-1">EMAIL</h5>
+                  <div class="input">
+                    <input id="email" type="email" class="validate grey lighten-5">
+                    <span class="helper-text" data-error="не верно" data-success="верно"></span>
+                  </div>
+                  <button class="teal darken-1 btn" type="submit" name="action">Подписться на рассылку 
+                    <i class="material-icons left">send</i>
+                  </button>
+                </div>
+              </form>
+          </div>
+        </div>
+        <div class="col l1 s12"></div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Социальные сети</h5>
+          <ul>      
+            <li class=""><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright teal darken-1 ">
+      <div class="container">
+      Разработано @mpatsulo с помощью 
+      <a class="brown-text text-lighten-5" href="http://materializecss.com">Materialize</a>
+      и <a class="brown-text text-lighten-5" href="http://materializecss.com">Django</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="materialize/js/materialize.js"></script>
+  <script src="materialize/js/init.js"></script>
+  <script>
+   M.AutoInit();
+  $('.carousel.carousel-slider').carousel({
+    fullWidth: true,
+    indicators: true
+  });
+  $(".dropdown-trigger").dropdown({ hover: true });   
+  </script>
+  </body>
+</html>

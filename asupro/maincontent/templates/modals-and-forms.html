@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Главная страница</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="materialize/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body class="grey lighten-4"> 
+<header>
+  <nav class="blue nav-extended" role="navigation">
+    <div class="nav-wrapper content w">
+      <a id="logo-container" href="#" class="brand-logo white-text col">Logo</a>
+      <ul class=" hide-on-med-and-down row">
+        <li class="col s1"></li>
+        <li class=""><a class="dropdown-trigger white-text" href="#!" data-target="company" href="#">О компании <i class="material-icons right">arrow_drop_down</i></a></li>
+        <li class=""><a class="dropdown-trigger white-text" href="#!" data-target="devices" href="#">Оборудование<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li class=""><a class="dropdown-trigger white-text" href="#!" data-target="services">Услуги<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li class=""><a class="white-text" href="#">Проекты</a></li>
+        <li class=""><a class="white-text" href="#!">Контакты</a></li>
+        <li class=""><a class="white-text" href="#!">Поддержка</a></li>
+        <li class="col"> <i class="material-icons">search</i></li>
+        <li class=" ">
+            <input id="" class="  grey lighten-4 blue-text" type="search"  onended="alert('Заглушка. Вы ввели:'+this.value)"  onchange="alert('Заглушка. Вы ввели:'+this.value)" placeholder="Поиск"> 
+        </li>
+          
+        <li class="" ><a class="white-text"  href="#" class=""> <i class=" large material-icons right">shopping_basket</i> Корзина</a></li>
+        <li>
+        </li>
+      </ul>
+        <!-- Dropdown Structure -->
+        <ul id='devices' class='dropdown-content row '>
+
+            <div class="col s6">
+              <div class="">
+                <div class ="col s3"> <br><img src="images/Барьер.png"  width="50px" class="circle responsive-img" alt=""></div>
+                <div class ="col s9 black-text">
+                  <ul>
+                    <li><a href="http://">Активные барьеры</a></li>
+                    <li><a href="http://">Пассивные барьеры</a></li>
+                    <li><a href="http://">Весь каталог</a></li>
+                  </ul>              
+                </div>
+              </div>
+            </div>
+            <div class="col s6">
+              <div class="">
+              
+                <div class ="col s3"> <br><img src="images/Блоки-измерения-информации.png"  width="50px" class="circle responsive-img" alt=""></div>
+    
+                <div class ="col s9 black-text">
+                  <ul>
+                    <li><a href="http://">Блоки управления АГЗУ</a></li>
+                    <li><a href="http://">Блоки управления АСН</a></li>
+                    <li><a href="http://">Весь каталог</a></li>
+                  </ul>              
+                </div>
+              </div>
+            </div>
+            <div class="col s6">
+              <div class="">
+
+                <div class ="col s3"> <br><img src="images/контроллер.png"  width="50px" class="circle responsive-img" alt=""></div>
+    
+                <div class ="col s9 black-text">
+                  <ul>
+                    <li><a href="http://">Контроллеры моноблочные</a></li>
+                    <li><a href="http://">Модули ввода-вывода</a></li>
+                    <li><a href="http://">Процессорные модули</a></li>
+                    <li><a href="http://">Весь каталог</a></li>
+                  </ul>              
+                </div>
+              </div>
+            </div>
+            <div class="col s6">
+              <div class="">
+
+                <div class ="col s3"> <br><img src="images/электрощитовое - оборудование.png"  width="50px" class="circle responsive-img" alt=""></div>
+    
+                <div class ="col s9 black-text">
+                  <ul>
+                    <li><a href="http://">Блоки управления</a></li>
+                    <li><a href="http://">Монтажные панели</a></li>
+                    <li><a href="http://">Весь каталог</a></li>
+                  </ul>              
+                </div>
+              </div>
+            </div>        
+            <div class="col s6">
+              <div class="">
+                <div class ="col s11">
+                  <ul class="row ">
+                    <img src="images/Установки-проверочные.png"  width="50px" class="circle responsive-img col s3" alt="">
+                    <div class="col s1"></div>
+                    <div></div>
+                    <a href="http://" class="blue-text"> Проверочные установки</a> 
+                  </ul>              
+                </div>
+              </div>
+            </div>               
+        </ul>
+        <ul id='company' class='dropdown-content'>
+          <li><a href="#!">О компании</a></li>
+          <li><a href="#!">Партнеры</a></li>
+          <li><a href="#!">Реквизиты</a></li>
+          <li><a href="#!">Лицензии</a></li>
+        </ul>
+      <ul id='services' class='dropdown-content'>
+        <li><a href="#!">Реквизиты</a></li>
+        <li><a href="#!">Расписание</a></li>
+      </ul>
+      <ul id='contacts' class='dropdown-content'>
+        <li><a href="#!">Реквизиты</a></li>
+        <li><a href="#!">Расписание</a></li>
+      </ul>
+      <ul id="nav-mobile" class="sidenav">
+        <ul class="collapsible">
+          <li>
+            <div class="collapsible-header black-text">О компании</div>
+            <div class="collapsible-body black-text">
+              <a href="http://"> Реквизиты</a>
+              <a href="http://"> Документы</a>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header black-text">Оборудование</div>
+            <div class="collapsible-body black-text">
+              <a href="http://"> Категория</a>
+              <a href="http://"> Категория</a>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header black-text">Услуги</div>
+            <div class="collapsible-body black-text">
+              <a href="http://"> Категория</a>
+              <a href="http://"> Категория</a>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header black-text">Проекты</div>
+            <div class="collapsible-body black-text">
+              <a href="http://"> Категория</a>
+              <a href="http://"> Категория</a>
+            </div>
+          </li>
+          <li>
+            <div class="">
+              <a href="">Контакты</a>
+            </div>
+          </li>
+          <li>
+            <div class="">
+              <a href="#" class="text-light-green text-lighten-5"><i class=" large material-icons right">shopping_basket</i> Корзина</a>
+            </div>
+          </li>
+        </ul>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger "><i class="material-icons ">menu</i></a>
+    </div>
+
+    <div class="nav-content blue">
+      <div class="row main">
+        <div class="col"></div>
+          <div class="col s12 m3 l2">
+            <a href="tel:+" class="white-text"> Телефон: 8 800 555 3535</a>
+        </div>
+        <div class="col s12 m3 l2">
+          <span class="white-text">Аддрес: Город, Улица, Дом </span>
+        </div>
+        <div class="col s12 m3 l4">
+          <a href="mailto:" class="white-text">Почта: testacc@ya.ru</a>
+        </div>
+        </div>
+      </div>
+  </nav>
+</header>
+  
+  <main class="main  ">
+    <section class="content">
+      <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Нажать чтобы посмотреть модальное окно</a>
+
+      <!-- Modal Structure -->
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <h5 class="centerd-text blue-text">Отправьте сообщение и мы свяжемся с вами</h5> <br>
+          <div class="">
+            <form class="col s12">
+              <div class="">
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">account_circle</i>
+                  <input id="prefix" required="true" type="text" class="validate" placeholder="Как к вам обращаться">
+                  <span class="helper-text" data-error="неверно" data-success="верно"></span>
+                </div>
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">phone</i>
+                  <input id="telephone" required="true" type="tel" placeholder="Ваш телефонный номер" class="validate">
+                  <span class="helper-text" data-error="неверно" data-success="верно"></span>
+                </div>
+                <div class="input-field col s12">
+                  <i class="material-icons prefix">mail</i>
+                  <input id="email" type="email" required="true" class="validate" placeholder="Ваша почта your-cool-mail@mail.com">
+                  <span class="helper-text" data-error="неверно" data-success="верно"></span>
+                </div>
+                <div class="input-field col s12">
+                  <i class="material-icons prefix"> format_size</i>
+                  <textarea id="textarea1" class="materialize-textarea" placeholder="Ваше сообщение">Ваше сообщение</textarea>
+                </div>
+                <div>
+                  <input type="hidden" name="">
+                </div>
+                <div class>
+                  <button type="submit" class="btn-large blue" style="width: 100%;">Отправить сообщение</button>
+                </div>
+                <div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer class="page-footer blue-grey lighten-5">
+    <div id="subscribe" class="content">
+     
+      <div class="row">
+          <div class="col l7 s12">
+            <div class="">
+              <form class=" col s12" action="">
+                <div class="row">
+                  <div class=" input-field inline col s12" >
+                    <input id="email_inline" type="email" required="true" class="validate">
+                    <label for="email_inline">Ваша почта</label>
+                    <span class="helper-text" data-error="неверно" data-success="верно">your-coole-mail-example@mail.com</span></div>
+                  <div class="col s12"> <button type="submit" class="col blue btn s12" >Подписаться на рассылку</button></div>
+                </div>
+              </form>
+            </div>
+          </div>
+        <div class="col l1 s12"></div>
+        <div class="col l4 s12">
+          <h5 class="blue-text">Социальные сети</h5>
+          <ul>      
+            <li class=""><a class="" href="#!">Link 1</a></li>
+            <li><a class="" href="#!">Link 2</a></li>
+            <li><a class="" href="#!">Link 3</a></li>
+            <li><a class="" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright blue-grey lighten-5 ">
+      <div class="container black-text">
+      Разработано @mpatsulo с помощью 
+      <a class="brown-text text-lighten-2" href="http://materializecss.com">Materialize</a>
+      и <a class="brown-text text-lighten-2" href="http://materializecss.com">Django</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="materialize/js/materialize.js"></script>
+  <script src="materialize/js/init.js"></script>
+  <script>
+  M.AutoInit();
+  $('.carousel.carousel-slider').carousel({
+    fullWidth: true,
+    indicators: true
+  });
+  $(".dropdown-trigger").dropdown({ hover: true });
+  $(document).ready(function(){
+    $('.tap-target').tapTarget('menu');
+  });
+
+  </script>
+  </body>
+</html>

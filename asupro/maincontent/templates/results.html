@@ -1,0 +1,89 @@
+{% extends "index-centred.html" %}
+{% load static %}
+
+{% block meta %}
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Результаты поиска</title>
+{% endblock meta %}
+{% block maincontent %}
+    <article id="searchcontent" class="content white">
+      <div><h5 class="centerd-text">Результаты поиска</h5></div>
+      <section class="content">
+        <div class="input-field content col s6">
+          <i class="material-icons prefix">search</i>
+          <input type="text" id="autocomplete-input" class="autocomplete" onchange="javascript:location.href = 'http://127.0.0.1:8000/search/'+this.value;">
+          <label for="autocomplete-input"> Поиск</label>
+        </div>
+      </section>
+      <section class="content">
+        <table class="striped">
+          <tbody >
+            {% for product in products  %}
+            <tr class="row">
+              <div>{{product.title}}</div>
+              <div>{{product.text}}</div>
+              <div>{{product.category}}</div>
+              <a href ="{%url 'product' product_slug=product.slug %}"> Подробнее: {{product.slug}} </a>
+            </tr>
+            {% endfor %}
+            {% for category in categories  %}
+            <tr class="row">
+              <div>{{category.name}}</div>
+              <a href ="{%url 'catalog' q=category %}">{{category.slug}} </a>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+
+      </section>
+
+      <br>
+    </article>
+    <div class="content">
+      <div class="content">
+      
+
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal grey  lighten-5 ">
+          <div class="modal-content">
+            <h5 class="centerd-text blue-text">Отправьте сообщение и мы свяжемся с вами</h5> <br>
+            <div class="">
+              <form class="col s12">
+                <div class="">
+                  <div class="input-field col s6">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="prefix" required="true" type="text" class="validate" placeholder="Как к вам обращаться">
+                    <span class="helper-text" data-error="неверно" data-success="верно"></span>
+                  </div>
+                  <div class="input-field col s6">
+                    <i class="material-icons prefix">phone</i>
+                    <input id="phone" required="true" type="tel" placeholder="Ваш телефонный номер" class="validate" pattern="+[0=9] ([0-9]{3}) [0-9]{3} [0-9]{4}" maxlength="12">
+                    <span class="helper-text" data-error="неверно" data-success="верно"></span>
+                  </div>
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix">mail</i>
+                    <input id="email" type="email" required="true" class="validate" placeholder="Ваша почта your-cool-mail@mail.com">
+                    <span class="helper-text" data-error="неверно" data-success="верно"></span>
+                  </div>
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix"> format_size</i>
+                    <textarea id="textarea1" class="materialize-textarea" placeholder="Ваше сообщение"></textarea>
+                  </div>
+                  <div>
+                    <input type="hidden" name="">
+                  </div>
+                  <div class>
+                    <button type="submit" class="btn-large blue" style="width: 100%;">Отправить сообщение</button>
+                  </div> <br>
+                  <div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>  
+{% endblock maincontent %}

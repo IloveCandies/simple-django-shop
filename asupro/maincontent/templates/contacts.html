@@ -1,0 +1,85 @@
+{% extends "index-centred.html" %}
+{% load static %}
+
+{% block meta %}
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Контакты</title>
+{% endblock meta %}
+
+{% block maincontent %}
+<article id="" class="content white">
+  <div><h5 class="centerd-text"> Контактная информация</h5></div>
+  <div class="row centerd-text">
+  </div>
+  <section class="content">
+    <div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/64/kemerovo/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Кемерово</a><a href="https://yandex.ru/maps/64/kemerovo/?ll=86.087314%2C55.354968&source=wizgeo&utm_medium=mapframe&utm_source=maps&z=10" style="color:#eee;font-size:12px;position:absolute;top:14px;">Кемерово — Яндекс.Карты</a><iframe src="https://yandex.ru/map-widget/v1/-/CGTfZDNN" width="100%" height="300px" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+    <table class="centered">
+      <thead>
+        <tr>
+            <th>8 800 555 35 35</th>
+            <th>example@mail.com</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Пн,Вт,Ср</td>
+          <td> 10.00 - 20.00</td>
+        </tr>
+        <tr>
+          <td>Чт,Пт</td>
+          <td> 12.00 - 20.00</td>
+        </tr>
+      </tbody>
+    </table> <br>
+        <a class="blue btn modal-trigger  col s12" href="#modal1" style="width: 98%; margin-left: 0.5rem;">Связаться с нами</a>
+  </section>
+  <br>
+</article>
+<div class="content">
+  <div class="content">
+  
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal grey  lighten-5 ">
+      <div class="modal-content">
+        <h5 class="centerd-text blue-text">Отправьте сообщение и мы свяжемся с вами</h5> <br>
+        <div class="">
+          <form class="col s12">
+            <div class="">
+              <div class="input-field col s6">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="prefix" required="true" type="text" class="validate" placeholder="Как к вам обращаться">
+                <span class="helper-text" data-error="неверно" data-success="верно"></span>
+              </div>
+              <div class="input-field col s6">
+                <i class="material-icons prefix">phone</i>
+                <input id="phone" required="true" type="tel" placeholder="Ваш телефонный номер" class="validate" pattern="+[0=9] ([0-9]{3}) [0-9]{3} [0-9]{4}" maxlength="12">
+                <span class="helper-text" data-error="неверно" data-success="верно"></span>
+              </div>
+              <div class="input-field col s12">
+                <i class="material-icons prefix">mail</i>
+                <input id="email" type="email" required="true" class="validate" placeholder="Ваша почта your-cool-mail@mail.com">
+                <span class="helper-text" data-error="неверно" data-success="верно"></span>
+              </div>
+              <div class="input-field col s12">
+                <i class="material-icons prefix"> format_size</i>
+                <textarea id="textarea1" class="materialize-textarea" placeholder="Ваше сообщение"></textarea>
+              </div>
+              <div>
+                <input type="hidden" name="">
+              </div>
+              <div class>
+                <button type="submit" class="btn-large blue" style="width: 100%;">Отправить сообщение</button>
+              </div> <br>
+              <div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+{% endblock maincontent %}
