@@ -33,6 +33,7 @@ urlpatterns = [
     path('requisites/',requisites_page),
     path('licensions/',licensions_page),
     path('partners/',partners_page),
+    path('service/',service_page),
     path('search/<q>/',search_results, name = 'search'),
     path('search/',search_page,name='empty_search' ),
     path('product/<product_slug>/',product, name = 'product'),

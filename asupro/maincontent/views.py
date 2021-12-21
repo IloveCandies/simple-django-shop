@@ -7,32 +7,48 @@ from maincontent.models import *
 from ecommerce.cart import Cart
 def main_page(request):
     cart = Cart(request)
-    context = {'cart':cart}
+    categories = Category.objects.all()
+    maincontent = MainPageContent.objects.all
+    context = {'cart':cart, 'categories':categories,'maincontent':maincontent}
     return render(request,'index-centred.html',context)
 
 def company_page(request):
     cart = Cart(request)
-    context = {'cart':cart}
+    categories = Category.objects.all()
+    context = {'cart':cart, 'categories':categories}
     return render(request,'company.html',context)
 
 def partners_page(request):
     cart = Cart(request)
-    context = {'cart':cart}
+    categories = Category.objects.all()
+    partners = PartnersPageContent.objects.all()
+    context = {'cart':cart, 'categories':categories,'partners':partners}
     return render(request,'partners.html',context)
 
 def requisites_page(request):
     cart = Cart(request)
-    context = {'cart':cart}
+    categories = Category.objects.all()
+    requisites = RequsitesPageContent.objects.all()
+    context = {'cart':cart, 'categories':categories,'requisites':requisites,}
     return render(request,'requisites.html',context)
 
 def licensions_page(request):
     cart = Cart(request)
-    context = {'cart':cart}
+    categories = Category.objects.all()
+    context = {'cart':cart, 'categories':categories}
     return render(request,'documents.html',context)
 
-def contacts_page(request):
-    cart = Cart(request)  
+def service_page(request):
+    cart = Cart(request)
+    #services = Category.objects.all()
     context = {'cart':cart}
+    return render(request,'uslugi.html',context)
+
+def contacts_page(request):
+    cart = Cart(request)
+    categories = Category.objects.all()
+    contacts = ContactsPageContent.objects.all()
+    context = {'cart':cart, 'categories':categories,'contacts':contacts}
     return render(request,'contacts.html',context)
 
 def catalog_products(request,q):
