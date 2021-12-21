@@ -1,0 +1,111 @@
+{% extends "index-centred.html" %}
+{% load static %}
+
+  {% block meta %}
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Каталог</title>
+  {% endblock meta %}
+  <!-- CSS  -->
+
+    
+  {% block maincontent %}
+    <article id="production" class="content white">
+      <div><h5 class="centerd-text"> Каталог товаров</h5></div>
+      <section class="content">
+        <div  id="filters" class="row">
+          <div class="input-field col s6">
+            <select  onchange="javascript:location.href = this.value;" >
+              <option data-icon="images/1.jpg" value="{%url 'catalog' q='all' %}">Показать всё</option>
+              {% for c in categories %}
+              <option data-icon="images/1.jpg" value="{%url 'catalog' q=c.slug %}">{{c.name}}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="input-field col s6">
+            <select>
+              <option >Производитель(в разработке)</option>
+              <option ></option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <h5 class="centerd-text">{{query_category.name}}</h5>
+          {% for product in products %}
+            <div class="col m3 l3 s6">
+              <div class="card small">
+                  <div class="card-image waves-effect waves-block waves-light">
+                      <img class="activator" src="{{Media}}{{product.picture.url}}">
+                  </div>
+                  <div class="card-content">
+                      <p><a href="{{product.get_absolute_url}}">{{product.title}}</a></p>
+                      <p><a href="#">{{product.category}}</a></p>
+                      <p>{{product.cost}} руб</p>
+                      <p><a href="{%url 'add' product_slug=product.slug %}" class="btn blue col s12"> <i class="material-icons">add_shopping_cart</i></a></p>
+                  </div>
+              </div>
+            </div>
+            {% endfor %}                                                  
+        </div>
+
+            <a class="blue btn modal-trigger  col s12" href="#modal1" style="width: 98%; margin-left: 0.5rem;">Связаться с нами</a>
+      
+          </section>
+      <br>
+    </article>
+
+    <div class="content">
+      <div class="content">
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal grey  lighten-5 ">
+          <div class="modal-content">
+            <h5 class="centerd-text blue-text">Отправьте сообщение и мы свяжемся с вами</h5> <br>
+            <div class="">
+              <form class="col s12">
+                <div class="">
+                  <div class="input-field col s6">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="prefix" required="true" type="text" class="validate" placeholder="Как к вам обращаться">
+                    <span class="helper-text" data-error="неверно" data-success="верно"></span>
+                  </div>
+                  <div class="input-field col s6">
+                    <i class="material-icons prefix">phone</i>
+                    <input id="phone" required="true" type="tel" placeholder="Ваш телефонный номер" class="validate" pattern="+[0=9] ([0-9]{3}) [0-9]{3} [0-9]{4}" maxlength="12">
+                    <span class="helper-text" data-error="неверно" data-success="верно"></span>
+                  </div>
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix">mail</i>
+                    <input id="email" type="email" required="true" class="validate" placeholder="Ваша почта your-cool-mail@mail.com">
+                    <span class="helper-text" data-error="неверно" data-success="верно"></span>
+                  </div>
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix"> format_size</i>
+                    <textarea id="textarea1" class="materialize-textarea" placeholder="Ваше сообщение"></textarea>
+                  </div>
+                  <div>
+                    <input type="hidden" name="">
+                  </div>
+                  <div class>
+                    <button type="submit" class="btn-large blue" style="width: 100%;">Отправить сообщение</button>
+                  </div> <br>
+                  <div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+{% endblock maincontent %}
+
+{% block scripts %}
+  <script>
+    
+      $('select').formSelect({hover:true});
+    </script>
+{% endblock scripts %}
+
+

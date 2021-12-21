@@ -25,7 +25,7 @@ from mailoperations.views import *
 urlpatterns = [
     path('admin/doc/', include('django.contrib.admindocs.urls')),
     path('admin/', admin.site.urls),
-    
+
     ##maincontent.views
     path('index/',main_page),
     path('contacts/',contacts_page),
@@ -38,11 +38,11 @@ urlpatterns = [
     path('search/',search_page,name='empty_search' ),
     path('product/<product_slug>/',product, name = 'product'),
     path('catalog/<q>/',catalog_products, name = 'catalog'),
-    
+
     ##ecommerce.views
     path('cart/',cart_detail),
     path('add/<product_slug>/',cart_add, name = 'add'),
-    path('increase/<product_slug>/',cart_add, name = 'increase'),
+    path('increase/<product_slug>/',increase_item, name = 'increase'),
     path('remove/<product_slug>/',cart_remove, name = 'remove'),
     path('decrease/<product_slug>/',decrease_item, name = 'decrease'),
 

@@ -12,11 +12,11 @@
   <link href="{% static 'materialize/css/materialize.css'%}"  type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="{% static 'materialize/css/style.css'%}" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
-<body class="white"> 
+<body class="white">
   {% block header %}
   <header>
     <nav class="light-blue lighten-2 nav-extended" role="navigation">
-      
+
       <div class="nav-wrapper container w" style="margin: 0 auto; padding: auto;">
         <ul class=" hide-on-med-and-down row">
           <li class=" col l2 s0 h4" > <a class="dropdown-trigger white-text" href="/index" data-target="company" href="#">О компании <i class="material-icons right">arrow_drop_down</i></a></li>
@@ -44,7 +44,7 @@
                   <div><a href="{%url 'catalog' q=c.slug %}"> {{c.name}}</a></div>
                 </div>
               </div>
-            {% endfor %}               
+            {% endfor %}
           </ul>
 
           <ul id='company' class='dropdown-content' style="width: 10%">
@@ -104,20 +104,20 @@
         </ul>
         <a href="#" data-target="nav-mobile" class="sidenav-trigger blue-text"><i class="material-icons">menu</i></a>
       </div>
-      
-      <div class="nav-content light-blue lighten-2"> 
+
+      <div class="nav-content light-blue lighten-2">
 
         <div class="centerd-text">8 800 555 35 35 650040, г.Кемерово, ул. Ю.Двужильного 5, оф. 31 testacc@ya.ru </div>
 
       </div>
-  
-    
+
+
     </nav>
   </header>
   {% endblock header %}
   <main id="mainpage" class="container">
     {% block maincontent %}
-    <br> 
+    <br>
     <article id="info" class="content">
       <section class="content">
         <div class="row">
@@ -160,7 +160,7 @@
       <div><h6 class="centerd-text"> <br></h6></div>
       <section class="content">
           <div class="row">
-              
+
               <div class="col m3 l3 s12">
                   <div class="card small">
                       <div class="card-image waves-effect waves-block waves-light">
@@ -190,7 +190,7 @@
                           <p>Здесь написана более подробная информация об продукте</p>
                       </div>
                   </div>
-              </div> 
+              </div>
 
               <div class="col m3 l3 s12">
                   <div class="card small">
@@ -221,7 +221,7 @@
                           <p>Здесь написана более подробная информация об продукте</p>
                       </div>
                   </div>
-              </div> 
+              </div>
 
             </div>
             <a class="blue btn modal-trigger  col s12" href="#modal1" style="width: 98%; margin-left: 0.5rem;">Связаться с нами</a>
@@ -230,7 +230,7 @@
     </article>
     <div class="content">
       <div class="content">
-      
+
 
         <!-- Modal Structure -->
         <div id="modal1" class="modal grey  lighten-5 ">
@@ -282,7 +282,7 @@
         <div class="col s12">
             <div class="row">
               <div class="input-field col s12">
-                <textarea id="search_query" class="materialize-textarea" placeholder="Ваше сообщение"></textarea> 
+                <textarea id="search_query" class="materialize-textarea" placeholder="Ваше сообщение"></textarea>
                 <a class="col btn blue s12" onclick="javascript:location.href = 'https://patsulo.pythonanywhere.com/search/'+search_query.value"> Найти</a>
               </div>
             </div>
@@ -296,12 +296,12 @@
 {% block footer %}
 <footer class="page-footer blue-grey lighten-5">
   <div id="subscribe" class="container" style="margin: 0 auto;">
-   
+
     <div class="row " style="margin-left: 3%; margin-right: 3%;">
-     
+
         <div class="col l11 s12">
           <div class="">
-            
+
             <form class=" col s12" action="
             javascript:location.href = 'https://patsulo.pythonanywhere.com/subscribe/'+ email_inline.value
             ">
@@ -315,8 +315,8 @@
             </form>
           </div>
         </div>
-       <div class="col l1 s12">          
-        <ul>      
+       <div class="col l1 s12">
+        <ul>
           <li class=""><a class="" href="#!">Link1</a></li>
           <li><a class="" href="#!">Link text 2</a></li>
           <li><a class="" href="#!">Link sd 3</a></li>
@@ -329,7 +329,7 @@
 </div>
 <div class="blue-grey lighten-5 container" style="margin: 0 auto;">
   <div class=" black-text"  style="margin-left: 4%; margin-right: 4%;" >
-  Разработано @mpatsulo с помощью 
+  Разработано @mpatsulo с помощью
   <a class="brown-text text-lighten-2" href="http://materializecss.com">Materialize</a>
   и <a class="brown-text text-lighten-2" href="http://materializecss.com">Django</a>
   </div>

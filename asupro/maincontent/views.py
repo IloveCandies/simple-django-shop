@@ -53,7 +53,7 @@ def contacts_page(request):
 
 def catalog_products(request,q):
     cart = Cart(request)
-    if(q == "all"):   
+    if(q == "all"):
         categories = Category.objects.all()
         products = Product.objects.all()
         context = {
@@ -71,10 +71,10 @@ def catalog_products(request,q):
         'products':products,
         'cart':cart}
         return render(request,'catalog.html',context)
-   
+
 def product(request, product_slug):
     cart = Cart(request)
-    product = Product.objects.get(slug = product_slug) 
+    product = Product.objects.get(slug = product_slug)
     context = {
         'product':product,
         'cart':cart
@@ -83,13 +83,16 @@ def product(request, product_slug):
 
 def search_results(request,q):
     cart = Cart(request)
-    query_category = Category.objects.get(slug=q)
-    categories = Category.objects.filter(Q(slug=q)|Q(name = q))
-    products = Product.objects.filter(Q(category=query_category)|Q(title = q)|Q(text =q))
-    maincontent = MainPageContent.objects.filter(content = q)
-    parterscontent = PartnersPageContent.objects.filter(Q(link = q))
-    requisitescontent = RequsitesPageContent.objects.filter(Q(first_column = q)| Q(second_column =q))
-    context = {
+    try:
+        query_category = Category.objects.get(slug__icontains=q)
+        products = Product.objects.filter(Q(category=query_category)|Q(title__icontains = q)|Q(text__icontains =q))
+    except:
+        categories = Category.objects.filter(Q(slug__icontains=q)|Q(name__icontains = q))
+        products = Product.objects.filter(Q(title__icontains = q)|Q(text__icontains =q))
+        maincontent = MainPageContent.objects.filter(content__icontains = q)
+        parterscontent = PartnersPageContent.objects.filter(Q(link__icontains = q))
+        requisitescontent = RequsitesPageContent.objects.filter(Q(first_column__icontains = q)| Q(second_column__icontains =q))
+        context = {
         'categories':categories,
         'products':products,
         'maincontent':maincontent,
