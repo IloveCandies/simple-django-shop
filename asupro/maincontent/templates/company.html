@@ -1,0 +1,30 @@
+{% extends "index-centred.html" %}
+{% load static %}
+
+{% block meta %}
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Главная страница</title>
+{% endblock meta %}
+
+{% block maincontent %}
+<article id="" class="content white">
+  <div><h5 class="centerd-text"> О компании</h5></div> <br>
+  <section class="content">
+    <div class="row">
+     <div class="col s12">
+      <p class="flow-text">I am Flow Text</p>
+      <p class="flow-text">
+        One common flaw we've seen in many frameworks is a lack of support for truly responsive text. While elements on the page resize fluidly, text still resizes on a fixed basis. To ameliorate this problem, for text heavy pages, we've created a class that fluidly scales text size and line-height to optimize readability for the user. Line length stays between 45-80 characters and line height scales to be larger on smaller screens.
+        To see Flow Text in action, slowly resize your browser and watch the size of this text body change! Use the button above to toggle off/on flow-text to see the difference!
+      </p>
+     </div>
+    </div>
+    </section>
+  <br>
+</article>
+<br>
+{% endblock maincontent %}
+
+
+

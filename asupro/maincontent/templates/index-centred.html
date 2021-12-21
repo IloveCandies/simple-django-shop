@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block meta %}
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Главная страница</title>
+  {% endblock meta %}
+  <!-- CSS  -->
+  {% load static %}
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{% static 'materialize/css/materialize.css'%}"  type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static 'materialize/css/style.css'%}" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body class="white"> 
+  {% block header %}
+  <header>
+    <nav class="light-blue lighten-2 nav-extended" role="navigation">
+      
+      <div class="nav-wrapper container w" style="margin: 0 auto; padding: auto;">
+        <ul class=" hide-on-med-and-down row">
+          <li class=" col l2 s0 h4" > <a class="dropdown-trigger white-text" href="/index" data-target="company" href="#">О компании <i class="material-icons right">arrow_drop_down</i></a></li>
+          <li class=" col l3"><a class="dropdown-trigger white-text" href="/catalog/all/" data-target="catalog" href="#">Оборудование<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li class=" col l2"><a class="dropdown-trigger white-text" href="/service" data-target="services">Услуги<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li class=" col l2"><a class="white-text" href="/contacts"> Контакты</a></li>
+          <li class="col l1"> <a href="#search" class="modal-trigger white-text"> <i class="large material-icons ">search</i></a></li>
+          <li class="col l2" ><a href="/cart" class="white-text" class=""><i class=" large material-icons left">shopping_cart</i></a>
+            {% with total_items=cart|length %}
+            {% if cart|length > 0 %}
+                <a href="/cart" class="white-text">
+                    {{ cart.get_total_price }} руб
+                </a>
+            {% else %}cart is empty.
+            {% endif %}
+        {% endwith %}
+          </li>
+        </ul>
+
+          <!-- Dropdown Structure -->
+          <ul id='catalog' class='dropdown-content row  ' style="min-width: 70%">
+            {% for c in categories %}
+              <div class="col s6">
+                <div class="">
+                  <div><a href="{%url 'catalog' q=c.slug %}"> {{c.name}}</a></div>
+                </div>
+              </div>
+            {% endfor %}               
+          </ul>
+
+          <ul id='company' class='dropdown-content' style="width: 10%">
+            <li><a href="/partners">Партнеры</a></li>
+            <li><a href="/requisites">Реквизиты</a></li>
+            <li><a href="/licensions">Лицензии</a></li>
+          </ul>
+        <ul id='services' class='dropdown-content'>
+          <li><a href="#!">Услуга</a></li>
+          <li><a href="#!">услуга</a></li>
+        </ul>
+        <ul id='contacts' class='dropdown-content'>
+          <li><a href="#!">Реквизиты</a></li>
+          <li><a href="#!">Расписание</a></li>
+        </ul>
+        <ul id="nav-mobile" class="sidenav">
+          <ul class="collapsible">
+            <li>
+              <div class="collapsible-header black-text">О компании</div>
+              <div class="collapsible-body black-text">
+                <a href="http://"> Реквизиты</a>
+                <a href="http://"> Документы</a>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header black-text">Оборудование</div>
+              <div class="collapsible-body black-text">
+                <a href="http://"> Категория</a>
+                <a href="http://"> Категория</a>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header black-text">Услуги</div>
+              <div class="collapsible-body black-text">
+                <a href="http://"> Категория</a>
+                <a href="http://"> Категория</a>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header black-text">Проекты</div>
+              <div class="collapsible-body black-text">
+                <a href="http://"> Категория</a>
+                <a href="http://"> Категория</a>
+              </div>
+            </li>
+            <li>
+              <div class="">
+                <a href="">Контакты</a>
+              </div>
+            </li>
+            <li>
+              <div class="">
+                <a href="#" class="text-light-green text-lighten-5"><i class=" large material-icons right">shopping_basket</i> Корзина</a>
+              </div>
+            </li>
+          </ul>
+        </ul>
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger blue-text"><i class="material-icons">menu</i></a>
+      </div>
+      
+      <div class="nav-content light-blue lighten-2"> 
+
+        <div class="centerd-text">8 800 555 35 35 650040, г.Кемерово, ул. Ю.Двужильного 5, оф. 31 testacc@ya.ru </div>
+
+      </div>
+  
+    
+    </nav>
+  </header>
+  {% endblock header %}
+  <main id="mainpage" class="container">
+    {% block maincontent %}
+    <br> 
+    <article id="info" class="content">
+      <section class="content">
+        <div class="row">
+         <div class="col s12">
+          <p class="flow-text centerd-text">Приветвуем на сайте АСУ ПРОЕКТ</p>
+          <p class="flow-text">
+           Мы занимаемя разработкой электрощитового оборудования и шкафов управления. Line length stays between 45-80 characters and line height scales to be larger on smaller screens.          </p>
+         </div>
+        </div>
+        </section>
+    </article>
+    <article id="points" class="content white">
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center blue-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center">Быстрые сроки разработки</h5>
+
+            <p class="light"></p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center blue-text"><i class="material-icons">group</i></h2>
+            <h5 class="center">Индивидуальный подход</h5>
+           </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center blue-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center">Технологичное производство</h5>
+           </div>
+        </div>
+      </div>
+    </article>
+    <article id="production" class="content white">
+      <div><h6 class="centerd-text"> <br></h6></div>
+      <section class="content">
+          <div class="row">
+              
+              <div class="col m3 l3 s12">
+                  <div class="card small">
+                      <div class="card-image waves-effect waves-block waves-light">
+                          <img class="activator" src="images/Барьер.png">
+                      </div>
+                      <div class="card-content">
+                          <span class="card-title activator grey-text text-darken-4"> <h6>Барьеры</h6> <i class="material-icons right">more_vert</i></span>
+                          <p><a href="#">Cсылка</a></p>
+                      </div>
+                      <div class="card-reveal">
+                          <span class="card-title grey-text text-darken-4">Заголовок<i class="material-icons right">close</i></span>
+                          <p>Здесь написана более подробная информация об продукте</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col m3 l3 s12">
+                  <div class="card small">
+                      <div class="card-image waves-effect waves-block waves-light">
+                          <img class="activator" src="images/Блоки-измерения-информации.png">
+                      </div>
+                      <div class="card-content">
+                          <span class="card-title activator grey-text text-darken-4"> <h6>Блоки</h6><i class="material-icons right">more_vert</i></span>
+                          <p><a href="#">Cсылка</a></p>
+                      </div>
+                      <div class="card-reveal">
+                          <span class="card-title grey-text text-darken-4">Заголовок<i class="material-icons right">close</i></span>
+                          <p>Здесь написана более подробная информация об продукте</p>
+                      </div>
+                  </div>
+              </div> 
+
+              <div class="col m3 l3 s12">
+                  <div class="card small">
+                      <div class="card-image waves-effect waves-block waves-light">
+                          <img class="activator" src="images/контроллер.png">
+                      </div>
+                      <div class="card-content">
+                          <span class="card-title activator grey-text text-darken-4"> <h6>Контроллеры</h6><i class="material-icons right">more_vert</i></span>
+                          <p><a href="#">Cсылка</a></p>
+                      </div>
+                      <div class="card-reveal">
+                          <span class="card-title grey-text text-darken-4">Заголовок<i class="material-icons right">close</i></span>
+                          <p>Здесь написана более подробная информация об продукте</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col m3 l3 s12">
+                  <div class="card small">
+                      <div class="card-image waves-effect waves-block waves-light">
+                          <img class="activator" src="images/электрощитовое - оборудование.png">
+                      </div>
+                      <div class="card-content">
+                          <span class="card-title activator grey-text text-darken-4">  <h6>Панели</h6><i class="material-icons right">more_vert</i></span>
+                          <p><a href="#">Cсылка</a></p>
+                      </div>
+                      <div class="card-reveal">
+                          <span class="card-title grey-text text-darken-4">Заголовок<i class="material-icons right">close</i></span>
+                          <p>Здесь написана более подробная информация об продукте</p>
+                      </div>
+                  </div>
+              </div> 
+
+            </div>
+            <a class="blue btn modal-trigger  col s12" href="#modal1" style="width: 98%; margin-left: 0.5rem;">Связаться с нами</a>
+      </section>
+      <br>
+    </article>
+    <div class="content">
+      <div class="content">
+      
+
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal grey  lighten-5 ">
+          <div class="modal-content">
+            <h5 class="centerd-text blue-text">Отправьте сообщение и мы свяжемся с вами</h5> <br>
+            <div class="">
+              <form class="col s12">
+                <div class="">
+                  <div class="input-field col s6">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="prefix" required="true" type="text" class="validate" placeholder="Как к вам обращаться">
+                    <span class="helper-text" data-error="неверно" data-success="верно"></span>
+                  </div>
+                  <div class="input-field col s6">
+                    <i class="material-icons prefix">phone</i>
+                    <input id="phone" required="true" type="tel" placeholder="Ваш телефонный номер" class="validate" pattern="+[0=9] ([0-9]{3}) [0-9]{3} [0-9]{4}" maxlength="12">
+                    <span class="helper-text" data-error="неверно" data-success="верно"></span>
+                  </div>
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix">mail</i>
+                    <input id="email" type="email" required="true" class="validate" placeholder="Ваша почта your-cool-mail@mail.com">
+                    <span class="helper-text" data-error="неверно" data-success="верно"></span>
+                  </div>
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix"> format_size</i>
+                    <textarea id="textarea1" class="materialize-textarea" placeholder="Ваше сообщение"></textarea>
+                  </div>
+                  <div>
+                    <input type="hidden" name="">
+                  </div>
+                  <div class>
+                    <button type="submit" class="btn-large blue" style="width: 100%;">Отправить сообщение</button>
+                  </div> <br>
+                  <div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    {% endblock maincontent %}
+<div id="search" class="modal search" style="height: 30%;width: 100%; top: 10%; overflow: hidden; margin-bottom: 90%;">
+  <div class="modal-content">
+    <div class="row">
+      <form action="">
+        <div class="col s12">
+            <div class="row">
+              <div class="input-field col s12">
+                <textarea id="search_query" class="materialize-textarea" placeholder="Ваше сообщение"></textarea> 
+                <a class="col btn blue s12" onclick="javascript:location.href = 'https://patsulo.pythonanywhere.com/search/'+search_query.value"> Найти</a>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% block footer %}
+<footer class="page-footer blue-grey lighten-5">
+  <div id="subscribe" class="container" style="margin: 0 auto;">
+   
+    <div class="row " style="margin-left: 3%; margin-right: 3%;">
+     
+        <div class="col l11 s12">
+          <div class="">
+            
+            <form class=" col s12" action="
+            javascript:location.href = 'https://patsulo.pythonanywhere.com/subscribe/'+ email_inline.value
+            ">
+              <div class="row">
+                <div class=" input-field inline col s12" >
+                  <input id="email_inline" type="email" required="true" class="validate">
+                  <label for="email_inline">Ваша почта</label>
+                  <span class="helper-text" data-error="неверно" data-success="верно">your-coole-mail-example@mail.com</span></div>
+                <div class="col s12"> <button type="submit" class="col blue btn s12" >Подписаться на рассылку</button></div>
+              </div>
+            </form>
+          </div>
+        </div>
+       <div class="col l1 s12">          
+        <ul>      
+          <li class=""><a class="" href="#!">Link1</a></li>
+          <li><a class="" href="#!">Link text 2</a></li>
+          <li><a class="" href="#!">Link sd 3</a></li>
+          <li><a class="" href="#!">Link 4</a></li>
+        </ul>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="blue-grey lighten-5 container" style="margin: 0 auto;">
+  <div class=" black-text"  style="margin-left: 4%; margin-right: 4%;" >
+  Разработано @mpatsulo с помощью 
+  <a class="brown-text text-lighten-2" href="http://materializecss.com">Materialize</a>
+  и <a class="brown-text text-lighten-2" href="http://materializecss.com">Django</a>
+  </div>
+</footer>
+{% endblock footer %}
+
+<!--  Scripts-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js" type="text/javascript"></script>
+
+<script src= "{% static 'materialize/js/materialize.js'%}"></script>
+<script src= "{% static 'materialize/js/init.js'%}"></script>
+<script>
+  M.AutoInit();
+  $('.carousel.carousel-slider').carousel({
+    fullWidth: true,
+    indicators: true
+  });
+  $(".dropdown-trigger").dropdown({ hover: true });
+  $("#phone").mask("+9 (999) 999-9999");
+</script>
+{% block scripts %}
+
+{% endblock scripts %}
+  </body>
+</html>
