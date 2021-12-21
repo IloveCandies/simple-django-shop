@@ -1,0 +1,75 @@
+{% extends "index-centred.html" %}
+{% load static %}
+
+{% block meta %}
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Главная страница</title>
+{% endblock meta %}
+
+{% block maincontent %}
+<article id="" class="content white">
+  <div><h5 class="centerd-text">{{product.title}}</h5></div> <br>
+  <section class="content row">
+    <div class="col s12 m7 l7">
+      <img class=""  src="{{Media}}{{product.picture.url}}">
+    </div>
+    <div class="col s12 m5 l5">
+      {{product.category}} {{product.brand}}
+      <p class="card-text mb-auto">{{product.text}}</p>
+      <p class="mt-2 h3 text-warning"> {{product.cost}}р</p>
+      <a class="btn  btn-outline-primary" href="{%url 'add' product_slug=product.slug %}" role="button">Добавить в корзину </a>
+    </div>
+  </section>
+  <br>
+</article>
+<div class="content">
+  <div class="content">
+  
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal grey  lighten-5 ">
+      <div class="modal-content">
+        <h5 class="centerd-text blue-text">Отправьте сообщение и мы свяжемся с вами</h5> <br>
+        <div class="">
+          <form class="col s12">
+            <div class="">
+              <div class="input-field col s6">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="prefix" required="true" type="text" class="validate" placeholder="Как к вам обращаться">
+                <span class="helper-text" data-error="неверно" data-success="верно"></span>
+              </div>
+              <div class="input-field col s6">
+                <i class="material-icons prefix">phone</i>
+                <input id="phone" required="true" type="tel" placeholder="Ваш телефонный номер" class="validate" pattern="+[0=9] ([0-9]{3}) [0-9]{3} [0-9]{4}" maxlength="12">
+                <span class="helper-text" data-error="неверно" data-success="верно"></span>
+              </div>
+              <div class="input-field col s12">
+                <i class="material-icons prefix">mail</i>
+                <input id="email" type="email" required="true" class="validate" placeholder="Ваша почта your-cool-mail@mail.com">
+                <span class="helper-text" data-error="неверно" data-success="верно"></span>
+              </div>
+              <div class="input-field col s12">
+                <i class="material-icons prefix"> format_size</i>
+                <textarea id="textarea1" class="materialize-textarea" placeholder="Ваше сообщение"></textarea>
+              </div>
+              <div>
+                <input type="hidden" name="">
+              </div>
+              <div class>
+                <button type="submit" class="btn-large blue" style="width: 100%;">Отправить сообщение</button>
+              </div> <br>
+              <div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+{% endblock maincontent %}
+
+
+

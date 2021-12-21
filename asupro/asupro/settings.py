@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-^f$xbi-5rt8qtt+u4269iqz$d(ursaxo2(1h-=dawo*exl77)t
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['patsulo.pythonanywhere.com']
 
 
 # Application definition
@@ -84,11 +84,13 @@ WSGI_APPLICATION = 'asupro.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'patsulo$db',
+        'USER': 'patsulo',
+        'PASSWORD': 'Dexp13maks',
+        'HOST': 'patsulo.mysql.pythonanywhere-services.com',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -133,13 +135,13 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
-
-STATIC_URL = 'static/'
-
-STATICFILES_DIRS = [
-   os.path.join(BASE_DIR, "static"),
-]
-MEDIA_URL = 'media/'
+STATIC_URL = '/static/'
+STATICFILES_DIRS = (os.path.join(BASE_DIR,'devserverstatic'),
+)
+STATIC_ROOT = '/home/patsulo/simple-django-shop/asupro/static/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

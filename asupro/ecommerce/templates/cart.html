@@ -4,7 +4,7 @@
 {% block meta %}
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Каталог</title>    
+  <title>Корзина</title>
   {% endblock meta %}
   {% block maincontent %}
     <article id="production" class="content white">
@@ -13,12 +13,12 @@
     <div class="content">
       <div class="content">
         <table class="striped">
-          <tbody >       
+          <tbody >
             {% for item in cart %}
             {% with product=item.product %}
             <tr class="row">
               <td class="col s3">
-                <div class="card small"> 
+                <div class="card small">
                   <div class="card-image waves-effect waves-block waves-light">
                       <img class="activator" src="{{Media}}{{item.product.picture.url}}">
                   </div>
@@ -35,17 +35,17 @@
           </tbody>
         </table>
         <h5 style=" margin-left: 0.5rem;"> Итого: {{ cart.get_total_price}}рублей</h5>
-        <a class="blue btn modal-trigger  col s12" href="#modal1" style="width: 98%; margin-left: 0.5rem;">Оформить заказ</a> 
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
+        <a class="blue btn modal-trigger  col s12" href="#modal1" style="width: 98%; margin-left: 0.5rem;">Оформить заказ</a>
+
+
+
+
+
+
+
+
+
+
         <!-- Modal Structure -->
         <div id="modal1" class="modal grey  lighten-5 ">
           <div class="modal-content">
@@ -89,25 +89,7 @@
       </div>
     </div>
     </article>
-    
-    <br>   
-    
-    <div id="search" class="modal search" style="height: 30%;width: 100%; top: 10%; overflow: hidden; margin-bottom: 90%;">
-    <div class="modal-content">
-      <div class="row">
-      <form action="">
-          <div class="col s12">
-            <div class="row">
-              <div class="input-field col s12">
-                <textarea id="textarea1" class="materialize-textarea" placeholder="Ваше сообщение"></textarea> 
-                <button class="col btn blue s12"> Найти</button>
-              </div>
-           </div>
-        </div>
-      </form>
-      </div>
-    </div>
-    </div>
+    <br>
 {% endblock maincontent %}
 
 
